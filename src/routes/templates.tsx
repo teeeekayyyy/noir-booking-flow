@@ -617,7 +617,8 @@ function TemplatesPage() {
                     </div>
 
                     <Link
-                      to="/templates"
+                      to="/booking"
+                      search={{ tier: tier.key }}
                       className={`btn w-full ${tier.highlight ? "btn-primary" : "btn-outline"}`}
                     >
                       {tier.cta}

@@ -299,7 +299,11 @@ function Index() {
                 <Feat>Mobile-first, cross-browser tested</Feat>
                 <Feat>7-day delivery</Feat>
               </ul>
-              <Link to="/templates" className="btn btn-outline w-full">
+              <Link
+                to="/booking"
+                search={{ tier: "starter" }}
+                className="btn btn-outline w-full"
+              >
                 Start with Starter
               </Link>
             </div>
@@ -333,7 +337,11 @@ function Index() {
                 <Feat light>CV/Resume integration page</Feat>
                 <Feat light>14-day delivery</Feat>
               </ul>
-              <Link to="/templates" className="btn btn-primary w-full">
+              <Link
+                to="/booking"
+                search={{ tier: "professional" }}
+                className="btn btn-primary w-full"
+              >
                 Go Professional
               </Link>
             </div>
@@ -365,7 +373,11 @@ function Index() {
                 <Feat>Priority delivery & ongoing support</Feat>
                 <Feat>Bespoke timeline</Feat>
               </ul>
-              <Link to="/templates" className="btn btn-primary w-full">
+              <Link
+                to="/booking"
+                search={{ tier: "executive" }}
+                className="btn btn-primary w-full"
+              >
                 Request Quote
               </Link>
             </div>
