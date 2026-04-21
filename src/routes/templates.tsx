@@ -414,6 +414,7 @@ function ExecutivePreview() {
 /* ------------------------------------------------------------------ */
 
 type Tier = {
+  key: "starter" | "professional" | "executive";
   badge: string;
   badgeClass: string;
   name: string;
@@ -428,6 +429,7 @@ type Tier = {
 
 const tiers: Tier[] = [
   {
+    key: "starter",
     badge: "Starter — The Minimalist",
     badgeClass: "bg-[#F0F0F0] text-muted-foreground",
     name: "The Starter Portfolio",
@@ -447,6 +449,7 @@ const tiers: Tier[] = [
     Preview: StarterPreview,
   },
   {
+    key: "professional",
     badge: "Professional — The Narrative",
     badgeClass: "bg-primary text-primary-foreground",
     name: "The Professional Portfolio",
@@ -467,6 +470,7 @@ const tiers: Tier[] = [
     Preview: ProfessionalPreview,
   },
   {
+    key: "executive",
     badge: "Executive — The Signature",
     badgeClass: "bg-charcoal text-offwhite",
     name: "The Executive Bundle",
