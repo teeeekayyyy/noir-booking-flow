@@ -127,17 +127,16 @@ function Index() {
         <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6">
           <div className="max-w-[800px]">
             <span className="mb-6 inline-block rounded-full border border-primary/20 bg-primary-soft px-4 py-1.5 text-[0.74rem] font-medium uppercase tracking-[0.12em] text-primary">
-              Career Design Studio — Lagos, NG
+              Portfolio Architecture Studio · Lagos, NG
             </span>
             <h1 className="mb-6 font-display text-[clamp(2.6rem,6vw,5rem)] font-extrabold leading-[1.05] tracking-[-0.03em]">
-              Your career is<br />
-              a product.<br />
-              <span className="text-primary">Present it like one.</span>
+              Build your digital<br />
+              infrastructure.<br />
+              <span className="text-primary">Deploy with precision.</span>
             </h1>
             <p className="mb-10 max-w-[520px] text-[1.05rem] font-light leading-[1.75] text-[#4A4A4A]">
-              Most tech professionals have strong skills but weak positioning. The Portfolio
-              Architect builds the digital presence that gets you shortlisted — before the
-              interview even begins.
+              Custom-coded portfolios for tech professionals. We architect the digital presence
+              that gets you shortlisted before the interview begins.
             </p>
             <div className="mb-13 flex flex-wrap gap-4" style={{ marginBottom: 52 }}>
               <Link to="/templates" className="btn btn-primary">
@@ -150,12 +149,12 @@ function Index() {
             <div className="flex flex-wrap items-center gap-5 text-muted-foreground">
               <span className="flex items-center gap-2 text-[0.84rem]">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                7-day turnaround on Starter
+                5 business day delivery
               </span>
               <span className="hidden h-4 w-px bg-border sm:block" />
               <span className="flex items-center gap-2 text-[0.84rem]">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                100+ tech professionals positioned
+                100+ portfolios shipped
               </span>
               <span className="hidden h-4 w-px bg-border sm:block" />
               <span className="flex items-center gap-2 text-[0.84rem]">
@@ -172,9 +171,9 @@ function Index() {
         <div className="mx-auto max-w-[1100px] px-6">
           <div className="grid grid-cols-2 sm:grid-cols-4">
             {[
-              { n: "3×", l: "More recruiter callbacks on average" },
+              { n: "3×", l: "Recruiter callback lift, on average" },
               { n: "100+", l: "Portfolios shipped across tech tracks" },
-              { n: "7 days", l: "Average delivery on Starter tier" },
+              { n: "5 days", l: "Standard delivery, every tier" },
               { n: "₦0", l: "Extra charge for revision rounds" },
             ].map((s, i) => (
               <div
@@ -207,14 +206,13 @@ function Index() {
                 Hiring managers spend 7 seconds on your profile. What do they see?
               </h2>
               <p className="mb-4 text-[0.93rem] leading-[1.8] text-muted-foreground">
-                The Nigerian tech market is growing fast — and it's getting competitive just as
-                quickly. A GitHub link and a PDF CV are no longer enough. Decision-makers expect a
-                polished digital presence that shows how you think, not just what you've done.
+                The Nigerian tech market is competitive and getting faster. A GitHub link and a
+                PDF CV are no longer enough. Decision-makers expect a digital presence that shows
+                how you think, not just what you have done.
               </p>
               <p className="text-[0.93rem] leading-[1.8] text-muted-foreground">
-                The Portfolio Architect treats your career the way a product designer treats a
-                launch: with strategy, visual hierarchy, and a clear value proposition. We close
-                the gap between your actual skill level and how you're perceived.
+                We treat your career the way a senior engineer treats a deployment: structured,
+                tested, and shipped to spec. Architecture, not decoration. Precision, not noise.
               </p>
             </div>
             <div className="reveal rounded-2xl border border-border bg-card p-9">
@@ -222,17 +220,17 @@ function Index() {
                 {
                   icon: "speed",
                   t: "Speed to impression",
-                  d: "Your portfolio loads fast, reads clearly, and communicates value in the first scroll.",
+                  d: "Your portfolio loads fast, reads clearly, and delivers value in the first scroll.",
                 },
                 {
                   icon: "narrative",
                   t: "Narrative architecture",
-                  d: "We structure your projects into case studies showing process, decision-making, and impact.",
+                  d: "Projects structured as case studies that show process, decision-making, and impact.",
                 },
                 {
                   icon: "market",
                   t: "Market-ready output",
-                  d: "From local Nigerian startups to international remote roles — your portfolio crosses contexts.",
+                  d: "Built for local Nigerian startups and international remote roles. One portfolio, both contexts.",
                 },
               ].map((w, i, arr) => (
                 <div
@@ -263,12 +261,11 @@ function Index() {
               Services & Pricing
             </span>
             <h2 className="mb-4 font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-[1.15] tracking-[-0.025em]">
-              Three tiers. One goal: get you the role.
+              Three tiers. One mandate: ship the role.
             </h2>
             <p className="text-[0.93rem] leading-[1.8] text-muted-foreground">
-              Every tier is built on the same principle — your portfolio should do the selling
-              before you open your mouth. The difference is depth, customisation, and strategic
-              positioning power.
+              Every tier is custom-coded for high-tier performance. Your portfolio does the
+              selling before you open your mouth. Depth and scope scale with the tier.
             </p>
           </div>
 
@@ -282,8 +279,8 @@ function Index() {
                 The Starter Portfolio
               </h3>
               <p className="mb-5 text-[0.875rem] leading-[1.7] text-muted-foreground">
-                A clean, focused one-page site that establishes your professional presence fast.
-                Ideal if you're entering the job market or need a solid digital home — now.
+                A focused one-page build that establishes your professional presence fast.
+                For candidates entering the market who need a solid digital home now.
               </p>
               <div className="font-display text-[2.3rem] font-extrabold leading-none tracking-[-0.03em]">
                 ₦65,000
@@ -297,7 +294,7 @@ function Index() {
                 <Feat>4 project showcase cards</Feat>
                 <Feat>Working contact form</Feat>
                 <Feat>Mobile-first, cross-browser tested</Feat>
-                <Feat>7-day delivery</Feat>
+                <Feat>5 business day delivery</Feat>
               </ul>
               <Link
                 to="/booking"
@@ -322,8 +319,8 @@ function Index() {
                 The Professional Portfolio
               </h3>
               <p className="mb-5 text-[0.875rem] leading-[1.7] text-[#B0B0B0]">
-                A multi-page experience for mid-level professionals ready to compete seriously —
-                locally and globally. Built for depth, not just aesthetics.
+                A multi-page build for mid-level professionals competing locally and globally.
+                Engineered for depth, not decoration.
               </p>
               <div className="font-display text-[2.3rem] font-extrabold leading-none tracking-[-0.03em]">
                 ₦130,000
@@ -335,7 +332,7 @@ function Index() {
                 <Feat light>Full case study writeups</Feat>
                 <Feat light>On-page SEO optimization</Feat>
                 <Feat light>CV/Resume integration page</Feat>
-                <Feat light>14-day delivery</Feat>
+                <Feat light>5 business day delivery</Feat>
               </ul>
               <Link
                 to="/booking"
@@ -355,9 +352,8 @@ function Index() {
                 The Executive Bundle
               </h3>
               <p className="mb-5 text-[0.875rem] leading-[1.7] text-muted-foreground">
-                Premium presence for senior engineers, PMs, and founders who need to command
-                attention. Custom interaction design, personal brand strategy, and full domain
-                setup.
+                Built for senior engineers, PMs, and founders. Custom interaction design,
+                personal brand strategy, and full domain deployment.
               </p>
               <div className="font-display text-[2.3rem] font-extrabold leading-none tracking-[-0.03em]">
                 ₦200,000+
@@ -388,26 +384,26 @@ function Index() {
             <div className="grid grid-cols-1 items-start gap-7 md:grid-cols-[1fr_1px_1fr]">
               <div>
                 <h4 className="mb-2.5 font-display text-[0.93rem] font-bold text-primary">
-                  Starter vs. Professional — the strategic difference
+                  Starter vs. Professional. The structural difference.
                 </h4>
                 <p className="text-[0.84rem] leading-[1.75] text-muted-foreground">
-                  The Starter tier gets you visible. It's your professional front door — enough
-                  to move from invisible to findable. The Professional tier gets you competitive.
-                  Case studies prove how you think, SEO ensures you're discovered, and multi-page
-                  architecture signals a higher level of craft. Targeting mid-senior roles or
-                  international companies? Professional is the floor, not the ceiling.
+                  Starter makes you visible. It is your professional front door, engineered to
+                  move you from invisible to findable. Professional makes you competitive. Case
+                  studies prove how you think, SEO drives discovery, and multi-page architecture
+                  signals a higher level of craft. Targeting mid-senior roles or international
+                  companies? Professional is the floor, not the ceiling.
                 </p>
               </div>
               <div className="hidden bg-primary/15 md:block" style={{ alignSelf: "stretch" }} />
               <div>
                 <h4 className="mb-2.5 font-display text-[0.93rem] font-bold text-primary">
-                  What tier is right for me?
+                  Which tier fits.
                 </h4>
                 <p className="text-[0.84rem] leading-[1.75] text-muted-foreground">
-                  0–2 years or just starting your search? Start with Starter. 2–6 years targeting
-                  growth-stage or enterprise companies? Professional will pay for itself in your
-                  first salary negotiation. Senior IC, engineering manager, or founder? The
-                  Executive Bundle is a strategic investment in your personal brand.
+                  0 to 2 years or starting your search: Starter. 2 to 6 years targeting
+                  growth-stage or enterprise companies: Professional pays for itself in your
+                  first salary negotiation. Senior IC, engineering manager, or founder: the
+                  Executive Bundle is the infrastructure layer for your personal brand.
                 </p>
               </div>
             </div>
@@ -432,7 +428,7 @@ function Index() {
                 n: "01",
                 icon: "discover",
                 t: "Discovery",
-                d: "We start with a structured intake session — your career goals, target companies, and what you want to be known for. This shapes every decision from layout to copy. No template-first thinking.",
+                d: "A structured intake session: career goals, target companies, and the position you want to own. Every layout and copy decision compiles from this brief. No template-first thinking.",
                 list: [
                   "Career goals alignment",
                   "Target audience mapping",
@@ -442,8 +438,8 @@ function Index() {
               {
                 n: "02",
                 icon: "design",
-                t: "Design",
-                d: "Architecture before aesthetics. We map your information hierarchy first — then build the visual language around it. You review wireframes and direction before a single pixel of final code is written.",
+                t: "Architect",
+                d: "Architecture before aesthetics. We map information hierarchy first, then build the visual language around it. You approve wireframes and direction before final code is written.",
                 list: [
                   "Layout & copy structure",
                   "Visual direction approval",
@@ -453,8 +449,8 @@ function Index() {
               {
                 n: "03",
                 icon: "ship",
-                t: "Ship",
-                d: "Your portfolio goes live on schedule. We handle deployment, final browser testing, and a handover walkthrough so you know how to maintain and update it. Full ownership is yours.",
+                t: "Deploy",
+                d: "Your portfolio ships on schedule. We handle deployment, final browser testing, and a handover walkthrough so you can maintain and update it. Full ownership transfers to you.",
                 list: [
                   "Hosting & deployment",
                   "Cross-device testing",
@@ -505,8 +501,8 @@ function Index() {
               These are the edges.
             </h2>
             <p className="text-[0.93rem] leading-[1.8] text-muted-foreground">
-              A great portfolio needs reinforcements. Add these to ensure your full career profile
-              works as one coherent system.
+              A solid portfolio needs reinforcements. Add these to ship a career profile that
+              compiles as one coherent system.
             </p>
           </div>
 
@@ -516,7 +512,7 @@ function Index() {
                 badge: "Add-on",
                 badgeCls: "bg-[#F0F9FF] text-[#0077AA]",
                 t: "CV Revamp",
-                d: "ATS-optimized. Keyword-targeted. Achievement-forward. We rebuild your CV to complement your portfolio — not contradict it.",
+                d: "ATS-optimized. Keyword-targeted. Achievement-forward. We rebuild your CV to align with your portfolio, not contradict it.",
                 price: "₦15,000",
                 hl: false,
               },
@@ -524,7 +520,7 @@ function Index() {
                 badge: "Add-on",
                 badgeCls: "bg-[#F0F9FF] text-[#0077AA]",
                 t: "LinkedIn Optimization",
-                d: "Profile rewrite, headline engineering, summary narrative, and keyword strategy. Turn LinkedIn from passive profile to active recruiter magnet.",
+                d: "Profile rewrite, headline engineering, summary narrative, and keyword strategy. Convert LinkedIn from passive profile to active recruiter inbound.",
                 price: "₦20,000",
                 hl: false,
               },
@@ -532,7 +528,7 @@ function Index() {
                 badge: "Best Value",
                 badgeCls: "bg-primary text-primary-foreground",
                 t: "Full Career Bundle",
-                d: "CV Revamp + LinkedIn Optimization together. Portfolio, CV, and LinkedIn — all aligned and telling the same story. Save ₦5,000.",
+                d: "CV Revamp plus LinkedIn Optimization. Portfolio, CV, and LinkedIn aligned to one narrative. Save ₦5,000.",
                 price: "₦30,000",
                 hl: true,
               },
@@ -585,21 +581,21 @@ function Index() {
           <div className="mt-13 grid grid-cols-1 gap-[22px] md:grid-cols-3" style={{ marginTop: 52 }}>
             {[
               {
-                q: "I had three recruiters reach out the week my portfolio went live. Two were from companies I'd been trying to get into for over a year. The positioning work was the difference.",
+                q: "Three recruiters reached out the week my portfolio went live. Two were from companies I had been trying to get into for over a year. The positioning was the difference.",
                 initials: "TI",
                 name: "Tunde I.",
                 role: "Senior Frontend Engineer, Lagos",
                 bg: "var(--primary)",
               },
               {
-                q: "I'm a product designer and my portfolio looked like every other designer's. TPA built something that actually felt like me — my process, my story. I landed a remote role at a London fintech two months after launch.",
+                q: "My portfolio looked like every other product designer's. TPA built something that read like me. My process, my story. I landed a remote role at a London fintech two months after launch.",
                 initials: "AO",
                 name: "Amara O.",
-                role: "Product Designer — Remote (UK)",
+                role: "Product Designer, Remote (UK)",
                 bg: "var(--charcoal)",
               },
               {
-                q: "The CV revamp alone was worth every kobo. I'd been getting auto-rejected from ATS systems for months without knowing it. New CV, new portfolio — first shortlist within 11 days.",
+                q: "The CV revamp alone was worth every kobo. I had been getting auto-rejected by ATS systems for months without knowing it. New CV, new portfolio. First shortlist within 11 days.",
                 initials: "KA",
                 name: "Kelechi A.",
                 role: "Backend Engineer, Abuja",
@@ -642,8 +638,8 @@ function Index() {
             starts with how you show up.
           </h2>
           <p className="mx-auto mb-10 max-w-[450px] text-[1.02rem] leading-[1.7] text-[#A0A0A0]">
-            Every week you wait is another week a weaker candidate with a better portfolio gets
-            the shortlist. Let's change that.
+            Every week you wait, a weaker candidate with a better portfolio gets the shortlist.
+            Build the infrastructure that flips that.
           </p>
           <div className="flex flex-wrap justify-center gap-3.5">
             <Link to="/templates" className="btn btn-primary">
