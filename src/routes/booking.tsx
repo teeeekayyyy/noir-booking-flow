@@ -160,7 +160,7 @@ function BookingPopup() {
       case "linkedin":
         if (!v) return "LinkedIn URL is required.";
         if (!/^https?:\/\/(www\.)?linkedin\.com\/.+/i.test(v))
-          return "Use the full URL — e.g. https://linkedin.com/in/yourname";
+          return "Use the full URL, e.g. https://linkedin.com/in/yourname";
         return;
       case "targetRole":
         if (!v) return "Pick the role you're targeting.";

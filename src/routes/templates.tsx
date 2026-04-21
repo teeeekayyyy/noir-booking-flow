@@ -172,7 +172,7 @@ function ProfessionalPreview() {
         {/* Crumb */}
         <div className="border-b border-border bg-[#FAFAFB] px-8 py-2.5 text-[0.7rem] text-muted-foreground">
           Case Studies <span className="mx-1.5">/</span>{" "}
-          <span className="text-foreground">Kora Banking — Onboarding Redesign</span>
+          <span className="text-foreground">Kora Banking · Onboarding Redesign</span>
         </div>
 
         {/* Body: sidebar + main */}
@@ -224,7 +224,7 @@ function ProfessionalPreview() {
             </h3>
             <p className="mb-6 text-[0.88rem] leading-[1.7] text-muted-foreground">
               Kora Banking's account opening flow had a 67% abandonment rate. I led the redesign
-              from research through ship — here's how we got it down to 25%.
+              from research through ship. Here is how we got it down to 25%.
             </p>
 
             {/* Inline image block */}
@@ -376,7 +376,7 @@ function ExecutivePreview() {
               <span className="font-display text-[0.6rem] font-bold text-primary">↗ 2024</span>
             </div>
             <h4 className="mb-2 font-display text-[1rem] font-bold leading-tight">
-              Mango Energy — Seed
+              Mango Energy · Seed
             </h4>
             <p className="mb-4 text-[0.78rem] leading-[1.65] text-white/65">
               Co-founded a distributed solar lease platform now powering 4,200 rural homes across
