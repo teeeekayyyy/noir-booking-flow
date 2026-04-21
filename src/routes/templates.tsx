@@ -5,20 +5,20 @@ import { useReveal } from "@/hooks/use-reveal";
 export const Route = createFileRoute("/templates")({
   head: () => ({
     meta: [
-      { title: "Design Concepts — Templates | The Portfolio Architect" },
+      { title: "Design Concepts · Templates | The Portfolio Architect" },
       {
         name: "description",
         content:
-          "Explore high-fidelity portfolio previews for our Starter, Professional, and Executive tiers — designed in the TPA brand system.",
+          "Browse high-fidelity portfolio previews for our Starter, Professional, and Executive tiers. Custom-coded for high-tier performance.",
       },
       {
         property: "og:title",
-        content: "Design Concepts — Templates | The Portfolio Architect",
+        content: "Design Concepts · Templates | The Portfolio Architect",
       },
       {
         property: "og:description",
         content:
-          "See real preview sections of every TPA portfolio tier. Pick the design that matches your career stage.",
+          "Preview each TPA portfolio tier. Pick the design that matches your career stage.",
       },
     ],
   }),
@@ -430,40 +430,40 @@ type Tier = {
 const tiers: Tier[] = [
   {
     key: "starter",
-    badge: "Starter — The Minimalist",
+    badge: "Starter · The Minimalist",
     badgeClass: "bg-[#F0F0F0] text-muted-foreground",
     name: "The Starter Portfolio",
     tagline:
-      "A focused one-page hero that establishes presence fast. Bold headline, clean nav, and a 2×2 grid of project showcases.",
+      "A focused one-page build that establishes presence fast. Bold headline, clean nav, and a 2×2 grid of project showcases.",
     price: "₦65,000",
-    priceNote: "One-time. 7-day delivery.",
+    priceNote: "One-time. 5 business day delivery.",
     features: [
       "One-page responsive layout",
       "About, Skills, and Bio sections",
       "4 project showcase cards",
       "Working contact form",
       "Mobile-first, cross-browser tested",
-      "7-day delivery",
+      "5 business day delivery",
     ],
     cta: "Choose Starter",
     Preview: StarterPreview,
   },
   {
     key: "professional",
-    badge: "Professional — The Narrative",
+    badge: "Professional · The Narrative",
     badgeClass: "bg-primary text-primary-foreground",
     name: "The Professional Portfolio",
     tagline:
-      "Multi-page case studies with a project sidebar (Tools · Role · Timeline) and a deep Process & Impact narrative built for serious competition.",
+      "Multi-page case studies with a project sidebar (Tools · Role · Timeline) and a deep Process and Impact narrative engineered for serious competition.",
     price: "₦130,000",
-    priceNote: "One-time. 14-day delivery.",
+    priceNote: "One-time. 5 business day delivery.",
     features: [
       "Everything in Starter",
       "Custom multi-page UI design",
       "Full case study writeups",
       "On-page SEO optimization",
       "CV/Resume integration page",
-      "14-day delivery",
+      "5 business day delivery",
     ],
     cta: "Choose Professional",
     highlight: true,
@@ -471,11 +471,11 @@ const tiers: Tier[] = [
   },
   {
     key: "executive",
-    badge: "Executive — The Signature",
+    badge: "Executive · The Signature",
     badgeClass: "bg-charcoal text-offwhite",
     name: "The Executive Bundle",
     tagline:
-      "Premium dark-mode presence with a personal brand strategy module and signature interaction design — custom cursor, scroll-reveals, motion.",
+      "Premium dark-mode infrastructure with a personal brand strategy module and signature interaction design. Custom cursor, scroll-reveals, motion.",
     price: "₦200,000+",
     priceNote: "Custom scope. Bespoke timeline.",
     features: [
@@ -523,13 +523,13 @@ function TemplatesPage() {
               Design Concepts
             </span>
             <h1 className="mb-6 font-display text-[clamp(2.2rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-[-0.03em]">
-              See your portfolio
+              See the architecture
               <br />
               <span className="text-primary">before you commission it.</span>
             </h1>
             <p className="mb-10 max-w-[560px] text-[1.02rem] font-light leading-[1.75] text-[#4A4A4A]">
               Each tier ships with a distinct design language tuned to its role in your career
-              story. Browse the live preview sections below — built in the same brand system your
+              story. Browse the live preview sections below, built in the same brand system your
               portfolio will use.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -639,10 +639,10 @@ function TemplatesPage() {
       <section className="bg-charcoal py-20 text-center">
         <div className="mx-auto max-w-[760px] px-6">
           <h2 className="mb-4 font-display text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-[1.15] tracking-[-0.025em] text-white">
-            Want to see how the full process works?
+            Want the full breakdown?
           </h2>
           <p className="mx-auto mb-9 max-w-[460px] text-[1rem] leading-[1.7] text-[#A0A0A0]">
-            Head back to the home page for the full breakdown of pricing, process, and results.
+            Head back to the home page for pricing, process, and results in one view.
           </p>
           <div className="flex flex-wrap justify-center gap-3.5">
             <Link to="/" className="btn btn-primary">

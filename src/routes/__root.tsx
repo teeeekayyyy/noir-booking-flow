@@ -31,21 +31,21 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "The Portfolio Architect — Career Strategy for Tech Professionals" },
+      { title: "The Portfolio Architect · Custom-coded portfolios for tech professionals" },
       {
         name: "description",
         content:
-          "Professional portfolio design and career optimization for tech professionals. Starter, Professional, and Executive tiers.",
+          "Custom-coded portfolio infrastructure for tech professionals. Architect, deploy, and ship in 5 business days.",
       },
       { name: "author", content: "The Portfolio Architect" },
       {
         property: "og:title",
-        content: "The Portfolio Architect — Career Strategy for Tech Professionals",
+        content: "The Portfolio Architect · Custom-coded portfolios for tech professionals",
       },
       {
         property: "og:description",
         content:
-          "Professional portfolio design and career optimization for tech professionals.",
+          "Custom-coded portfolio infrastructure for tech professionals. Architect, deploy, and ship in 5 business days.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

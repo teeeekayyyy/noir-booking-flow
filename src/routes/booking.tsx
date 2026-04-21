@@ -15,22 +15,22 @@ const TIERS: Record<
     key: "starter",
     name: "The Starter Portfolio",
     price: "₦65,000",
-    priceNote: "One-time. 7-day delivery.",
-    tagline: "A focused one-page hero that establishes presence fast.",
+    priceNote: "One-time. 5 business day delivery.",
+    tagline: "A focused one-page build that establishes presence fast.",
   },
   professional: {
     key: "professional",
     name: "The Professional Portfolio",
     price: "₦130,000",
-    priceNote: "One-time. 14-day delivery.",
-    tagline: "Multi-page case studies built for serious competition.",
+    priceNote: "One-time. 5 business day delivery.",
+    tagline: "Multi-page case studies engineered for serious competition.",
   },
   executive: {
     key: "executive",
     name: "The Executive Bundle",
     price: "₦200,000+",
     priceNote: "Custom scope. Bespoke timeline.",
-    tagline: "Premium dark-mode presence with personal brand strategy.",
+    tagline: "Premium dark-mode infrastructure with personal brand strategy.",
   },
 };
 
@@ -63,11 +63,11 @@ export const Route = createFileRoute("/booking")({
     const tier = TIERS[(match.search as BookingSearch).tier] ?? TIERS.professional;
     return {
       meta: [
-        { title: `Book ${tier.name} — The Portfolio Architect` },
+        { title: `Book ${tier.name} · The Portfolio Architect` },
         {
           name: "description",
           content:
-            "Reserve your portfolio architecture slot. Two-step intake — capped at 5 clients per week, delivered in 5 business days.",
+            "Reserve your portfolio architecture slot. Two-step intake, capped at 5 clients per week, deployed in 5 business days.",
         },
         { name: "robots", content: "noindex" },
       ],
@@ -277,7 +277,7 @@ function BookingPopup() {
               <>
                 <header className="mb-7">
                   <span className="mb-3 inline-block rounded-full border border-primary/20 bg-primary-soft px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-primary">
-                    Begin Architectural Brief
+                    Architectural Brief · Step 1
                   </span>
                   <h2
                     id="booking-title"
@@ -286,8 +286,8 @@ function BookingPopup() {
                     Reserve your slot for {tier.name}.
                   </h2>
                   <p className="mt-2 text-[0.9rem] leading-[1.65] text-muted-foreground">
-                    We cap intake at 5 clients per week. Tell us who we'd be designing for so we can
-                    prepare your discovery brief.
+                    Intake is capped at 5 clients per week. Tell us who we are designing for so
+                    we can prepare your discovery brief.
                   </p>
                 </header>
 
@@ -535,14 +535,14 @@ function PaymentStep({
     <>
       <header className="mb-7">
         <span className="mb-3 inline-block rounded-full border border-primary/20 bg-primary-soft px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-primary">
-          Settle the Brief
+          Settle the Brief · Step 2
         </span>
         <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-extrabold leading-[1.15] tracking-[-0.025em]">
-          Direct transfer — and you're locked in.
+          Direct transfer. You are locked in.
         </h2>
         <p className="mt-2 text-[0.9rem] leading-[1.65] text-muted-foreground">
-          Hi {form.fullName.split(" ")[0] || "there"} — here's your secured slot summary and the
-          banking details for your transfer.
+          Hi {form.fullName.split(" ")[0] || "there"}. Here is your slot summary and the banking
+          details for your transfer.
         </p>
       </header>
 
@@ -682,14 +682,14 @@ function PaymentStep({
       </div>
 
       <p className="mt-4 text-[0.78rem] leading-[1.6] text-muted-foreground">
-        After transfer, forward your receipt to{" "}
+        After transfer, send your receipt to{" "}
         <a
           href="mailto:hello@theportfolioarchitect.com"
           className="font-medium text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
         >
           hello@theportfolioarchitect.com
         </a>{" "}
-        to lock in your project slot.
+        to finalize your onboarding.
       </p>
 
       <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -754,12 +754,12 @@ function SuccessView({
           Slot Reserved · {tier.name}
         </span>
         <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.1rem)] font-extrabold leading-[1.15] tracking-[-0.025em]">
-          Architectural Review Initiated.
+          Payment received.
         </h2>
-        <p className="mx-auto mt-4 max-w-[460px] text-[0.92rem] leading-[1.7] text-muted-foreground">
-          We limit intake to 5 clients per week to ensure precision. Your Discovery Brief is being
-          prepared, and your custom-coded portfolio will be ready for deployment in{" "}
-          <span className="font-semibold text-foreground">5 business days</span>.
+        <p className="mx-auto mt-4 max-w-[480px] text-[0.92rem] leading-[1.7] text-muted-foreground">
+          Your project has entered the{" "}
+          <span className="font-semibold text-foreground">5-day architectural sprint</span>.
+          Send your receipt to finalize your onboarding.
         </p>
       </div>
 
@@ -768,14 +768,14 @@ function SuccessView({
           Next Step
         </div>
         <p className="mt-2 text-[0.88rem] leading-[1.65] text-foreground">
-          Forward your transfer receipt to{" "}
+          Send your transfer receipt to{" "}
           <a
             href="mailto:hello@theportfolioarchitect.com"
             className="font-bold text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
           >
             hello@theportfolioarchitect.com
           </a>{" "}
-          to lock in your project slot.
+          to finalize your onboarding.
         </p>
       </div>
 
