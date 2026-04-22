@@ -159,8 +159,8 @@ function BookingPopup() {
         return;
       case "linkedin":
         if (!v) return "LinkedIn URL is required.";
-        if (!/^https?:\/\/(www\.)?linkedin\.com\/.+/i.test(v))
-          return "Use the full URL, e.g. https://linkedin.com/in/yourname";
+        if (!/^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[A-Za-z0-9-]+\/?$/i.test(v))
+          return "Use this format: www.linkedin.com/in/your-handle-123abc";
         return;
       case "targetRole":
         if (!v) return "Pick the role you're targeting.";
@@ -355,7 +355,7 @@ function BookingPopup() {
                       aria-invalid={!!errors.linkedin}
                       aria-describedby={errors.linkedin ? "bk-linkedin-err" : undefined}
                       aria-label="LinkedIn profile URL"
-                      placeholder="https://linkedin.com/in/yourname"
+                      placeholder="www.linkedin.com/in/your-handle-123abc"
                       value={form.linkedin}
                       onChange={(e) => setField("linkedin", e.target.value)}
                       onBlur={() => blurField("linkedin")}
