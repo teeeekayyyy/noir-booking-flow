@@ -102,6 +102,53 @@ function Icon({ name }: { name: string }) {
   }
 }
 
+function CapacityIcon({ name }: { name: string }) {
+  const common = {
+    width: 22,
+    height: 22,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "var(--primary)",
+    strokeWidth: 1.75,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+  switch (name) {
+    case "capacity":
+      return (
+        <svg {...common}>
+          <path d="M3 12h4l3-9 4 18 3-9h4" />
+        </svg>
+      );
+    case "focus":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="12" cy="12" r="1.5" fill="var(--primary)" />
+        </svg>
+      );
+    case "standard":
+      return (
+        <svg {...common}>
+          <path d="M3 21V7l9-4 9 4v14" />
+          <path d="M9 21v-8h6v8" />
+          <path d="M3 21h18" />
+        </svg>
+      );
+    case "metric":
+      return (
+        <svg {...common}>
+          <path d="M3 3v18h18" />
+          <path d="M7 15l4-4 3 3 5-7" />
+          <path d="M14 7h5v5" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 function Index() {
   useReveal();
 
@@ -567,61 +614,83 @@ function Index() {
         </div>
       </section>
 
-      {/* RESULTS */}
-      <section id="results" className="py-24">
+      {/* STUDIO CAPACITY */}
+      <section id="capacity" className="py-24">
         <div className="mx-auto max-w-[1100px] px-6">
-          <div className="max-w-[580px]">
+          <div className="max-w-[640px]">
             <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary-soft px-4 py-1.5 text-[0.74rem] font-medium uppercase tracking-[0.12em] text-primary">
-              Real Results
+              Studio Capacity
             </span>
             <h2 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-[1.15] tracking-[-0.025em]">
-              What happens after you ship.
+              Precision Engineering.
             </h2>
+            <p className="mt-5 text-[0.95rem] leading-[1.8] text-muted-foreground">
+              TPA Studio operates on a high-focus model, accepting only 5 clients per week. This
+              ensures every career asset we build meets our architectural standards. Quality is
+              our only metric.
+            </p>
           </div>
-          <div className="mt-13 grid grid-cols-1 gap-[22px] md:grid-cols-3" style={{ marginTop: 52 }}>
+
+          <div className="mt-13 grid grid-cols-1 gap-[22px] sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: 52 }}>
             {[
               {
-                q: "Three recruiters reached out the week my portfolio went live. Two were from companies I had been trying to get into for over a year. The positioning was the difference.",
-                initials: "TI",
-                name: "Tunde I.",
-                role: "Senior Frontend Engineer, Lagos",
-                bg: "var(--primary)",
+                icon: "capacity",
+                t: "5 Clients / Week",
+                d: "A hard cap on intake. No queue inflation, no diluted attention.",
               },
               {
-                q: "My portfolio looked like every other product designer's. TPA built something that read like me. My process, my story. I landed a remote role at a London fintech two months after launch.",
-                initials: "AO",
-                name: "Amara O.",
-                role: "Product Designer, Remote (UK)",
-                bg: "var(--charcoal)",
+                icon: "focus",
+                t: "Single Architect",
+                d: "Your build is owned end-to-end by one engineer. No handoffs, no drift.",
               },
               {
-                q: "The CV revamp alone was worth every kobo. I had been getting auto-rejected by ATS systems for months without knowing it. New CV, new portfolio. First shortlist within 11 days.",
-                initials: "KA",
-                name: "Kelechi A.",
-                role: "Backend Engineer, Abuja",
-                bg: "var(--primary-dark)",
+                icon: "standard",
+                t: "Architectural Standard",
+                d: "Every layout decision is auditable against the brief. No template defaults.",
               },
-            ].map((t) => (
+              {
+                icon: "metric",
+                t: "Quality, the Metric",
+                d: "We measure callbacks, shortlists, and shipped roles. Nothing else.",
+              },
+            ].map((c) => (
               <div
-                key={t.name}
-                className="reveal rounded-2xl border border-border bg-card p-8 transition-shadow hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]"
+                key={c.t}
+                className="reveal flex flex-col gap-4 rounded-2xl border border-border bg-card p-7 transition-all hover:border-primary/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]"
               >
-                <div className="mb-3.5 tracking-[2px] text-primary text-[0.85rem]">★★★★★</div>
-                <p className="mb-5 text-[0.88rem] italic leading-[1.75]">"{t.q}"</p>
-                <div className="flex items-center gap-3">
-                  <span
-                    className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-full font-display text-[0.8rem] font-bold text-white"
-                    style={{ background: t.bg }}
-                  >
-                    {t.initials}
-                  </span>
-                  <div>
-                    <div className="font-display text-[0.875rem] font-bold">{t.name}</div>
-                    <div className="text-[0.77rem] text-muted-foreground">{t.role}</div>
-                  </div>
+                <div className="flex h-[44px] w-[44px] items-center justify-center rounded-[10px] bg-primary-soft">
+                  <CapacityIcon name={c.icon} />
                 </div>
+                <h3 className="font-display text-[1rem] font-bold leading-[1.3]">{c.t}</h3>
+                <p className="text-[0.85rem] leading-[1.65] text-muted-foreground">{c.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="border-t border-border bg-card py-24">
+        <div className="mx-auto max-w-[1100px] px-6">
+          <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1.4fr] md:gap-[72px]">
+            <div className="reveal">
+              <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary-soft px-4 py-1.5 text-[0.74rem] font-medium uppercase tracking-[0.12em] text-primary">
+                About the Studio
+              </span>
+              <h2 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-[1.1] tracking-[-0.025em]">
+                The Portfolio Architect.
+              </h2>
+            </div>
+            <div className="reveal">
+              <p className="text-[1.05rem] font-light leading-[1.7] text-foreground">
+                Engineering digital infrastructure for elite tech professionals.
+              </p>
+              <p className="mt-5 text-[0.93rem] leading-[1.8] text-muted-foreground">
+                Built in Lagos. Shipped to Lagos, London, Berlin, and remote teams worldwide.
+                Every portfolio is custom-coded against a single brief. No themes, no page
+                builders, no compromise.
+              </p>
+            </div>
           </div>
         </div>
       </section>
