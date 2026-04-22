@@ -102,6 +102,53 @@ function Icon({ name }: { name: string }) {
   }
 }
 
+function CapacityIcon({ name }: { name: string }) {
+  const common = {
+    width: 22,
+    height: 22,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "var(--primary)",
+    strokeWidth: 1.75,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+  switch (name) {
+    case "capacity":
+      return (
+        <svg {...common}>
+          <path d="M3 12h4l3-9 4 18 3-9h4" />
+        </svg>
+      );
+    case "focus":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="12" cy="12" r="1.5" fill="var(--primary)" />
+        </svg>
+      );
+    case "standard":
+      return (
+        <svg {...common}>
+          <path d="M3 21V7l9-4 9 4v14" />
+          <path d="M9 21v-8h6v8" />
+          <path d="M3 21h18" />
+        </svg>
+      );
+    case "metric":
+      return (
+        <svg {...common}>
+          <path d="M3 3v18h18" />
+          <path d="M7 15l4-4 3 3 5-7" />
+          <path d="M14 7h5v5" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 function Index() {
   useReveal();
 
