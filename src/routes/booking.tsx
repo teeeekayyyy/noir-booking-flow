@@ -797,9 +797,8 @@ function SuccessView({
           </h2>
 
           <p className="mt-4 max-w-[520px] text-[0.95rem] leading-[1.7] text-white/90">
-            Please email your receipt to the address below to lock in your slot. We begin your{" "}
-            <span className="font-bold text-white">5-day architectural sprint</span> as soon as
-            payment is verified.
+            Email your receipt to the address below to lock in your slot. We begin your{" "}
+            <span className="font-bold text-white">5-day sprint</span> once payment is verified.
           </p>
 
           {/* Standout email block */}
