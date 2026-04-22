@@ -1,12 +1,3 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  base: "./",
-  plugins: [react()],
-  build: {
-    outDir: 'dist',
-    minify: false,
-    emptyOutDir: true,
-  },
-});
+export default defineConfig();
