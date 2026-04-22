@@ -726,60 +726,108 @@ function SuccessView({
   onClose: () => void;
   tier: (typeof TIERS)[TierKey];
 }) {
+  const [emailCopied, setEmailCopied] = React.useState(false);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText("hello@theportfolioarchitect.com");
+      setEmailCopied(true);
+      window.setTimeout(() => setEmailCopied(false), 2200);
+    } catch {
+      /* noop */
+    }
+  }
+
   return (
     <div className="px-6 py-10 sm:px-10 sm:py-12">
+      {/* Confirmation card */}
       <div
-        aria-hidden="true"
-        className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+        className="relative overflow-hidden rounded-2xl p-7 text-white sm:p-9"
         style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, #2E5BFF 22%, transparent) 0%, transparent 70%)",
+          background: "linear-gradient(135deg, #2E5BFF 0%, #1A45E0 100%)",
+          boxShadow: "0 24px 60px rgba(46, 91, 255, 0.32)",
         }}
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2E5BFF] text-white shadow-[0_8px_24px_rgba(46,91,255,0.45)]">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M5 12l5 5L20 7"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-      </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%)" }}
+        />
 
-      <div className="text-center">
-        <span className="mb-3 inline-block rounded-full border border-primary/20 bg-primary-soft px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-primary">
-          Slot Reserved · {tier.name}
-        </span>
-        <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.1rem)] font-extrabold leading-[1.15] tracking-[-0.025em]">
-          Payment received.
-        </h2>
-        <p className="mx-auto mt-4 max-w-[480px] text-[0.92rem] leading-[1.7] text-muted-foreground">
-          Your project has entered the{" "}
-          <span className="font-semibold text-foreground">5-day architectural sprint</span>.
-          Send your receipt to finalize your onboarding.
-        </p>
-      </div>
+        <div className="relative">
+          {/* Bold checkmark */}
+          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.18)]">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M4 12.5l5 5L20 6.5"
+                stroke="#2E5BFF"
+                strokeWidth="3.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
 
-      <div className="mt-6 rounded-xl border border-primary/20 bg-primary-soft p-5 text-center">
-        <div className="font-display text-[0.7rem] font-bold uppercase tracking-[0.14em] text-primary">
-          Next Step
+          <span className="mb-3 inline-block rounded-full border border-white/30 bg-white/15 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white">
+            Slot Reserved · {tier.name}
+          </span>
+          <h2 className="font-display text-[clamp(1.55rem,3.2vw,2.05rem)] font-extrabold leading-[1.15] tracking-[-0.025em] text-white">
+            Transfer Logged.
+          </h2>
+
+          <p className="mt-4 max-w-[520px] text-[0.95rem] leading-[1.7] text-white/90">
+            Please email your receipt to the address below to lock in your slot. We begin your{" "}
+            <span className="font-bold text-white">5-day architectural sprint</span> as soon as
+            payment is verified.
+          </p>
+
+          {/* Standout email block */}
+          <div className="mt-6 rounded-xl border border-white/25 bg-white/10 p-3 backdrop-blur-sm">
+            <div className="mb-1.5 font-display text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/70">
+              Send Receipt To
+            </div>
+            <div className="flex items-center gap-2">
+              <a
+                href="mailto:hello@theportfolioarchitect.com"
+                className="flex-1 select-all rounded-md bg-white px-3 py-2.5 font-mono text-[0.95rem] font-bold tracking-[0.01em] text-charcoal transition-colors hover:bg-white/95 sm:text-[1.05rem]"
+                aria-label="Email hello@theportfolioarchitect.com"
+              >
+                hello@theportfolioarchitect.com
+              </a>
+              <button
+                type="button"
+                onClick={copyEmail}
+                aria-label={emailCopied ? "Email address copied" : "Copy email address"}
+                aria-live="polite"
+                className={`inline-flex min-h-[48px] min-w-[48px] items-center justify-center gap-2 rounded-md px-3.5 font-display text-[0.78rem] font-bold uppercase tracking-[0.08em] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E5BFF] ${
+                  emailCopied
+                    ? "bg-emerald-400 text-charcoal"
+                    : "bg-charcoal text-white hover:bg-black"
+                }`}
+              >
+                {emailCopied ? (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M5 12l5 5L20 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Copied
+                  </>
+                ) : (
+                  <>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" strokeWidth="2" />
+                      <path d="M5 15V6a2 2 0 012-2h9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                    Copy
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
-        <p className="mt-2 text-[0.88rem] leading-[1.65] text-foreground">
-          Send your transfer receipt to{" "}
-          <a
-            href="mailto:hello@theportfolioarchitect.com"
-            className="font-bold text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
-          >
-            hello@theportfolioarchitect.com
-          </a>{" "}
-          to finalize your onboarding.
-        </p>
       </div>
 
-      <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <button onClick={onClose} className="btn btn-primary w-full sm:w-auto">
           Done
         </button>
