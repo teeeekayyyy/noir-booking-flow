@@ -561,6 +561,8 @@ function Index() {
                 t: "CV Revamp",
                 d: "ATS-optimized. Keyword-targeted. Achievement-forward. We rebuild your CV to align with your portfolio, not contradict it.",
                 price: "₦15,000",
+                tier: "cv" as const,
+                cta: "Pay for CV Revamp",
                 hl: false,
               },
               {
@@ -569,6 +571,8 @@ function Index() {
                 t: "LinkedIn Optimization",
                 d: "Profile rewrite, headline engineering, summary narrative, and keyword strategy. Convert LinkedIn from passive profile to active recruiter inbound.",
                 price: "₦20,000",
+                tier: "linkedin" as const,
+                cta: "Pay for LinkedIn",
                 hl: false,
               },
               {
@@ -577,6 +581,8 @@ function Index() {
                 t: "Full Career Bundle",
                 d: "CV Revamp plus LinkedIn Optimization. Portfolio, CV, and LinkedIn aligned to one narrative. Save ₦5,000.",
                 price: "₦30,000",
+                tier: "bundle" as const,
+                cta: "Pay for Bundle",
                 hl: true,
               },
             ].map((a) => (
@@ -602,10 +608,11 @@ function Index() {
                     {a.price}
                   </div>
                   <Link
-                    to="/templates"
+                    to="/booking"
+                    search={{ tier: a.tier }}
                     className="btn btn-primary btn-sm mt-3 whitespace-nowrap"
                   >
-                    {a.hl ? "Bundle Up" : "Add This"}
+                    {a.cta}
                   </Link>
                 </div>
               </div>
