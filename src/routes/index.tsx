@@ -201,7 +201,7 @@ function Index() {
               <span className="hidden h-4 w-px bg-border sm:block" />
               <span className="flex items-center gap-2 text-[0.84rem]">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                100+ portfolios shipped
+                100% custom-coded, zero templates
               </span>
               <span className="hidden h-4 w-px bg-border sm:block" />
               <span className="flex items-center gap-2 text-[0.84rem]">
@@ -213,28 +213,48 @@ function Index() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* TPA QUALITY METRICS */}
       <section className="border-y border-border bg-card">
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4">
+        <div className="mx-auto max-w-[1100px] px-6 py-12">
+          <div className="mb-8 max-w-[640px]">
+            <span className="mb-3 inline-block rounded-full border border-primary/20 bg-primary-soft px-3.5 py-1 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-primary">
+              The TPA Quality Metrics
+            </span>
+            <h2 className="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold leading-[1.2] tracking-[-0.02em]">
+              Three standards. No shortcuts.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3">
             {[
-              { n: "3×", l: "Recruiter callback lift, on average" },
-              { n: "100+", l: "Portfolios shipped across tech tracks" },
-              { n: "5 days", l: "Standard delivery, every tier" },
-              { n: "₦0", l: "Extra charge for revision rounds" },
+              {
+                n: "100%",
+                t: "Custom Code",
+                l: "Zero templates used. Every line written for your brief.",
+              },
+              {
+                n: "5-Day",
+                t: "Sprint",
+                l: "Rapid, high-precision deployment. No drift, no delay.",
+              },
+              {
+                n: "ATS",
+                t: "Optimized",
+                l: "Engineered for human and AI recruiters. Built to surface.",
+              },
             ].map((s, i) => (
               <div
-                key={s.n}
-                className={`px-7 py-10 text-center ${
-                  i < 3 ? "sm:border-r sm:border-border" : ""
-                } ${i % 2 === 0 ? "border-r border-border sm:border-r" : ""} ${
-                  i < 2 ? "border-b border-border sm:border-b-0" : ""
-                }`}
+                key={s.t}
+                className={`px-7 py-8 ${
+                  i < 2 ? "sm:border-r sm:border-border" : ""
+                } ${i < 2 ? "border-b border-border sm:border-b-0" : ""}`}
               >
-                <div className="mb-1.5 font-display text-[2.3rem] font-extrabold tracking-[-0.03em]">
+                <div className="mb-2 font-display text-[2.4rem] font-extrabold leading-none tracking-[-0.03em] text-primary">
                   {s.n}
                 </div>
-                <div className="text-[0.83rem] leading-[1.4] text-muted-foreground">{s.l}</div>
+                <div className="mb-2 font-display text-[1rem] font-bold tracking-[-0.01em]">
+                  {s.t}
+                </div>
+                <div className="text-[0.85rem] leading-[1.5] text-muted-foreground">{s.l}</div>
               </div>
             ))}
           </div>
@@ -561,6 +581,8 @@ function Index() {
                 t: "CV Revamp",
                 d: "ATS-optimized. Keyword-targeted. Achievement-forward. We rebuild your CV to align with your portfolio, not contradict it.",
                 price: "₦15,000",
+                tier: "cv" as const,
+                cta: "Pay for CV Revamp",
                 hl: false,
               },
               {
@@ -569,6 +591,8 @@ function Index() {
                 t: "LinkedIn Optimization",
                 d: "Profile rewrite, headline engineering, summary narrative, and keyword strategy. Convert LinkedIn from passive profile to active recruiter inbound.",
                 price: "₦20,000",
+                tier: "linkedin" as const,
+                cta: "Pay for LinkedIn",
                 hl: false,
               },
               {
@@ -577,6 +601,8 @@ function Index() {
                 t: "Full Career Bundle",
                 d: "CV Revamp plus LinkedIn Optimization. Portfolio, CV, and LinkedIn aligned to one narrative. Save ₦5,000.",
                 price: "₦30,000",
+                tier: "bundle" as const,
+                cta: "Pay for Bundle",
                 hl: true,
               },
             ].map((a) => (
@@ -602,10 +628,11 @@ function Index() {
                     {a.price}
                   </div>
                   <Link
-                    to="/templates"
+                    to="/booking"
+                    search={{ tier: a.tier }}
                     className="btn btn-primary btn-sm mt-3 whitespace-nowrap"
                   >
-                    {a.hl ? "Bundle Up" : "Add This"}
+                    {a.cta}
                   </Link>
                 </div>
               </div>

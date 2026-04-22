@@ -5,7 +5,7 @@ import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-r
 /* TIER CATALOG (mirrors home + templates pages)                      */
 /* ------------------------------------------------------------------ */
 
-type TierKey = "starter" | "professional" | "executive";
+type TierKey = "starter" | "professional" | "executive" | "cv" | "linkedin" | "bundle";
 
 const TIERS: Record<
   TierKey,
@@ -32,6 +32,27 @@ const TIERS: Record<
     priceNote: "Custom scope. Bespoke timeline.",
     tagline: "Premium dark-mode infrastructure with personal brand strategy.",
   },
+  cv: {
+    key: "cv",
+    name: "CV Revamp",
+    price: "₦15,000",
+    priceNote: "One-time. 5 business day delivery.",
+    tagline: "ATS-optimized rewrite engineered for human and AI recruiters.",
+  },
+  linkedin: {
+    key: "linkedin",
+    name: "LinkedIn Optimization",
+    price: "₦20,000",
+    priceNote: "One-time. 5 business day delivery.",
+    tagline: "Profile, headline, and summary engineered for recruiter inbound.",
+  },
+  bundle: {
+    key: "bundle",
+    name: "Full Career Bundle",
+    price: "₦30,000",
+    priceNote: "One-time. CV plus LinkedIn, aligned to one narrative.",
+    tagline: "CV Revamp and LinkedIn Optimization, deployed as one system.",
+  },
 };
 
 const TARGET_ROLES = [
@@ -55,8 +76,8 @@ type BookingSearch = { tier: TierKey };
 export const Route = createFileRoute("/booking")({
   validateSearch: (search: Record<string, unknown>): BookingSearch => {
     const raw = (search.tier as string)?.toLowerCase();
-    const tier: TierKey =
-      raw === "starter" || raw === "professional" || raw === "executive" ? raw : "professional";
+    const allowed: TierKey[] = ["starter", "professional", "executive", "cv", "linkedin", "bundle"];
+    const tier: TierKey = (allowed as string[]).includes(raw) ? (raw as TierKey) : "professional";
     return { tier };
   },
   head: ({ match }) => {
@@ -776,9 +797,8 @@ function SuccessView({
           </h2>
 
           <p className="mt-4 max-w-[520px] text-[0.95rem] leading-[1.7] text-white/90">
-            Please email your receipt to the address below to lock in your slot. We begin your{" "}
-            <span className="font-bold text-white">5-day architectural sprint</span> as soon as
-            payment is verified.
+            Email your receipt to the address below to lock in your slot. We begin your{" "}
+            <span className="font-bold text-white">5-day sprint</span> once payment is verified.
           </p>
 
           {/* Standout email block */}
